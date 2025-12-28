@@ -1,0 +1,36 @@
+{
+  "name": "arxiv-mcp-server",
+  "version": "1.0.0",
+  "description": "ArXiv paper MCP server with custom LLM API",
+  "main": "build/index.js",
+  "bin": {
+    "arxiv-mcp-server": "build/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "keywords": [
+    "mcp",
+    "arxiv",
+    "paper",
+    "ai"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@agentic/arxiv": "^7.6.7",
+    "@modelcontextprotocol/sdk": "^0.6.0",
+    "axios": "^1.6.0",
+    "pdfreader": "^3.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
