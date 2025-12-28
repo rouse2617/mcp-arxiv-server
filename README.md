@@ -2,6 +2,22 @@
 
 一个支持自定义 LLM API 的 ArXiv 论文智能解读助手。支持 Model Context Protocol (MCP) 标准，将学术论文一键转为通俗中文解读和微信公众号文章。
 
+> ** Fork 自 ** [yzfly/arxiv-mcp-server](https://github.com/yzfly/arxiv-mcp-server)
+>
+> 感谢原作者 [yzfly](https://github.com/yzfly) 的优秀工作！本项目在其基础上进行了修改，将原本依赖的 SiliconFlow API 替换为支持任意 OpenAI 兼容的 LLM API，让用户可以使用自己已有的 API 服务。
+
+## 改动说明
+
+本分支对原项目 [yzfly/arxiv-mcp-server](https://github.com/yzfly/arxiv-mcp-server) 进行了以下修改：
+
+| 改动项 | 原项目 | 本项目 |
+|--------|--------|--------|
+| LLM API | 固定使用 SiliconFlow API | 支持任意 OpenAI 兼容 API |
+| 环境变量 | `SILICONFLOW_API_KEY` | `LLM_API_ENDPOINT`, `LLM_API_KEY`, `LLM_MODEL` 等 |
+| 依赖 | 需注册 SiliconFlow | 用户需自行配置 LLM API |
+
+**修改原因**：原项目需要注册 SiliconFlow 并获取其 API Key，本项目让用户可以使用已有的其他 LLM API 服务（如 DeepSeek、OpenAI、GLM 等）。
+
 ## 功能亮点
 
 - 🔍 **arXiv 论文智能搜索** - 关键词检索，快速定位你关心的论文
